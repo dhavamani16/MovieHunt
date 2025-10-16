@@ -1,6 +1,7 @@
 
 import './App.css';
 import { Footer, Header } from './components';
+import { MovieList } from './pages';
 import AllRoutes from './routes/AllRoutes';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div>
       <Header />
       <AllRoutes/>
+      
       <Footer />
     </div>
   );

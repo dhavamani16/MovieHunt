@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 export const Header = () => {
   return (
     <nav className="navbar navbar-expand-md fixed-top bg-primary navbar-dark">
       <div className="container-fluid">
-        <a href="#" className="navbar-brand d-flex align-items-center">
-          <i className="bi bi-film me-2"></i> MovieHunt
+        <a href="/" className="navbar-brand">
+          <i className="bi bi-film"></i> MovieHunt
         </a>
 
         <button
@@ -11,24 +13,24 @@ export const Header = () => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#menu"
-
+          
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="menu">
-          <ul className="navbar-nav me-auto mb-2 mb-md-0 text-center">
+          <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <a href="#" className="nav-link">Home</a>
+              < NavLink to="/" className="nav-link">Home</NavLink>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Top Rated</a>
+              <NavLink to="/movies/top-rated" className="nav-link">Top Rated</NavLink>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Popular</a>
+              <NavLink to="/movies/popular" className="nav-link">Popular</NavLink>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Upcoming</a>
+              <NavLink to="/movies/upcoming" className="nav-link">Upcoming</NavLink>
             </li>
           </ul>
 
