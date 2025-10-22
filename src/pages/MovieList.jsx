@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card } from "../components/Card";
 
-export const MovieList = ({ title }) => {
+
+export const MovieList = ({ title,apiPath }) => {
+  const {data:movies}=useFetch({apiPath});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,13 +33,11 @@ export const MovieList = ({ title }) => {
 
         <h5 className="text-danger py-2 border-bottom">{title}</h5>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 py-2">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        {movies.map((movie) => {
+          return <Card key={movie.id} />;
+        })}
+      </div>
+
       </main>
     </div>
   );
